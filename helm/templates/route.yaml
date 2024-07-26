@@ -1,15 +1,15 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: {{ include "hello-world.fullname" . }}
+  name: {{ .Values.app.name }}
 spec:
-  host: {{ include "hello-world.fullname" . }}.apps.cs220tanirvan.f41x.p1.openshiftapps.com
+  host: {{ .Values.app.name }}.apps.cs220tanirvan.f41x.p1.openshiftapps.com
   port:
     targetPort: http
   tls:
     termination: edge
   to:
     kind: Service
-    name: {{ include "hello-world.fullname" . }}
+    name: {{ .Values.app.name }}
     weight: 100
   wildcardPolicy: None

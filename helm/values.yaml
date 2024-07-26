@@ -4,6 +4,9 @@
 
 replicaCount: 1
 
+app:
+  name: hello-world
+
 image:
   repository: quay.io/tanirvan/hello-world-python
   pullPolicy: IfNotPresent
